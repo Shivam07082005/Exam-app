@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="quiz-container">
+        <header>
+            <div class="logo">Mock Test Series 2024</div>
+            <div class="timer-container">
+                Time Left: <span id="timer">60:00</span>
+            </div>
+            <button id="submit-btn" class="btn-submit">Submit Test</button>
+        </header>
+
+        <div class="main-layout">
+            
+            <main class="question-area">
+                <div class="question-header">
+                    <span id="section-title">Section Name</span>
+                    <span class="q-num">Question No. <span id="q-number">1</span></span>
+                </div>
+                
+                <div class="question-text" id="question-text">
+                    </div>
+
+                <div class="options-container" id="options-container">
+                    </div>
+
+                <div class="footer-nav">
+                    <div class="left-actions">
+                        <button class="btn btn-review" onclick="markForReview()">Mark for Review & Next</button>
+                        <button class="btn btn-clear" onclick="clearResponse()">Clear Response</button>
+                    </div>
+                    <div class="right-actions">
+                        <button class="btn btn-secondary" onclick="prevQuestion()">&lt;&lt; Previous</button>
+                        <button class="btn btn-primary" onclick="saveAndNext()">Save & Next</button>
+                    </div>
+                </div>
+            </main>
+
+            <aside class="sidebar">
+                <div class="user-info">
+                    <img src="https://via.placeholder.com/40" alt="User">
+                    <span>Candidate Name</span>
+                </div>
+
+                <div class="section-tabs" id="section-tabs">
+                    </div>
+
+                <div class="legend">
+                    <div class="legend-item"><span class="dot answered"></span> Answered</div>
+                    <div class="legend-item"><span class="dot not-answered"></span> Not Answered</div>
+                    <div class="legend-item"><span class="dot not-visited"></span> Not Visited</div>
+                    <div class="legend-item"><span class="dot review"></span> Mark for Review</div>
+                </div>
+
+                <div class="palette-grid" id="palette-grid">
+                    </div>
+            </aside>
+        </div>
+    </div>
+
+    <div id="result-screen" class="hidden">
+        <div class="result-card">
+            <h2>Test Submitted Successfully!</h2>
+            <table>
+                <tr>
+                    <td>Total Questions:</td>
+                    <td id="total-q">0</td>
+                </tr>
+                <tr>
+                    <td>Attempted:</td>
+                    <td id="attempted-q">0</td>
+                </tr>
+                <tr>
+                    <td>Correct:</td>
+                    <td id="correct-q" class="text-green">0</td>
+                </tr>
+                <tr>
+                    <td>Wrong:</td>
+                    <td id="wrong-q" class="text-red">0</td>
+                </tr>
+                <tr>
+                    <td><strong>Final Score:</strong></td>
+                    <td id="score">0</td>
+                </tr>
+            </table>
+            <button class="btn btn-primary" onclick="location.reload()">Restart Test</button>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
